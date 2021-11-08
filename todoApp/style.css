@@ -10,6 +10,9 @@ body{
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: bisque;
 }
 
 .title{
@@ -17,6 +20,8 @@ body{
 }
 
 .TasksList{
+    --marginTop:50vh;
+    margin-top: var(--marginTop);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,6 +43,13 @@ body{
     height: 100%;
 }
 .rightSide{
+    margin-left: 0.5vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.LeftSide{
     margin-left: 0.5vh;
     height: 100%;
     display: flex;
@@ -83,6 +95,20 @@ input{
 .newTaskDivTimePlace{
     color: grey;
     font-size: 0.8em;
+}
+
+.button-show-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: black;
+    color: white;
+    width: 5vh;
+    height: 5vh;
+    bottom: 10;
+    right: 10;
+    border-radius: 50%;
 }
 
 

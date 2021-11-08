@@ -32,12 +32,19 @@ class Task {
 
         
 
-        //creation boutonDelete
+        //creation done
 
         let newBoutonDelete = document.createElement('button')
         newBoutonDelete.classList.add('newBoutonDelete')
-        newBoutonDelete.textContent = "delete"
+        newBoutonDelete.textContent = "done"
         leftSide.appendChild(newBoutonDelete)
+
+        //creation done
+
+        let newBoutonDelete2 = document.createElement('button')
+        newBoutonDelete2.classList.add('newBoutonDelete2')
+        newBoutonDelete2.textContent = "delete"
+        leftSide.appendChild(newBoutonDelete2)
 
         //creation span nom 
 
@@ -91,13 +98,19 @@ class Task {
                 this.isActive = true;
                 newTask.style.opacity = 1;
                 newTaskName.style.textDecoration = ""
-                newBoutonDelete.textContent = "delete"
+                newBoutonDelete.textContent = "done"
                 task.isActive = true;
                 console.log(task);
                 localStorage.setItem(this.title, JSON.stringify(task));
             }
             console.log(this.isActive);
         })
+
+        newBoutonDelete2.addEventListener('click',()=>{
+            newTask.remove()
+            localStorage.removeItem(this.title);
+        })
+
         console.log(task);
         if(task.isActive == false){
             newTask.style.opacity = 0.5;

@@ -6,6 +6,7 @@ let colors = document.querySelector('.colors').childNodes;
 let color;
 let taskColor;
 let tabAllTasks = [];
+let showForm = true;
 
 function getAllItems() {
     var archive = {}
@@ -31,6 +32,7 @@ const addEventListener = () =>{
     const inputTaskPlace = document.querySelector('.input-tasksPlace');
     //btn
     const btn = document.querySelector('.bouton-tasks');
+    const btnShow = document.querySelector('.button-show-form')
 
     //inputListeners
 
@@ -88,6 +90,20 @@ const addEventListener = () =>{
         
         tabAllTasks.push(task)
       })
+    btnShow.addEventListener('click',()=>{
+        const formulaire = document.querySelector('.formulaire');
+        const ListeTodo = document.querySelector('.TasksList');
+        if(showForm==true){
+            showForm=false;
+            formulaire.style.display = "none";
+            ListeTodo.style.setProperty('--marginTop', 0+"vh")
+        }
+        else{
+            showForm=true;
+            formulaire.style.display = "flex";
+            ListeTodo.style.setProperty('--marginTop', 50+"vh")
+        }
+    })
 }
 
 
