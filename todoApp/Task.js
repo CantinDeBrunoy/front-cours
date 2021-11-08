@@ -15,6 +15,7 @@ class Task {
         //creation de la task
         let newTask = document.createElement('div')
         newTask.classList.add('task')
+        newTask.style.setProperty('--borderColor', "solid "+this.color)
         TasksList.appendChild(newTask)
 
         //creation cote gauche
