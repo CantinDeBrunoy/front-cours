@@ -9,6 +9,8 @@ class Task {
         this.initTask()
     }
     initTask() {
+        var task = JSON.parse(localStorage.getItem(this.title));
+
         const TasksList = document.querySelector('.TasksList');
         //creation de la task
         let newTask = document.createElement('div')
@@ -74,29 +76,34 @@ class Task {
         newTaskDescritpion.textContent = this.description
         rightSide.appendChild(newTaskDescritpion)
 
-        //creation color
-
-        let newTaskColor = document.createElement('span')
-        newTaskColor.classList.add('newTaskColor')
-        newTaskColor.textContent = this.color
-        rightSide.appendChild(newTaskColor)
-
         //listener du bouton
         newBoutonDelete.addEventListener('click',()=>{
             if(this.isActive === true){
                 this.isActive = false;
+                task.isActive = false;
                 newTask.style.opacity = 0.5;
                 newTaskName.style.textDecoration = "line-through"
                 newBoutonDelete.textContent = "restaurer"
+                console.log(task);
+                localStorage.setItem(this.title, JSON.stringify(task));
             }
             else{
                 this.isActive = true;
                 newTask.style.opacity = 1;
                 newTaskName.style.textDecoration = ""
                 newBoutonDelete.textContent = "delete"
+                task.isActive = true;
+                console.log(task);
+                localStorage.setItem(this.title, JSON.stringify(task));
             }
             console.log(this.isActive);
         })
+        console.log(task);
+        if(task.isActive == false){
+            newTask.style.opacity = 0.5;
+            newTaskName.style.textDecoration = "line-through"
+            newBoutonDelete.textContent = "restaurer"
+        }
 
         
     }
