@@ -29,6 +29,7 @@ body{
 }
 
 .task{
+    z-index: 5;
     --borderColor:"";
     border-radius: 5px;
     margin-top: 1%;
@@ -111,4 +112,10 @@ input{
     border-radius: 50%;
 }
 
+.pasDeTask{
+    position: absolute;
+    margin-top: 51vh;
+    margin-left: 45%;
+    font-size: 2vw;
+}
 

@@ -13,7 +13,17 @@ function getAllItems() {
     keys = Object.keys(localStorage)
     i = keys.length;
 
+    if(i==0){
+        let pasDeTask = document.createElement('div')
+        pasDeTask.classList.add('pasDeTask')
+        pasDeTask.textContent = "Pas de Todo :)"
+        document.body.appendChild(pasDeTask)
+    }
+
     while ( i-- ) {
+        if(document.querySelector('.pasDeTask')){
+            document.querySelector('.pasDeTask').remove()
+        }
         archive[keys[i]] = localStorage.getItem( keys[i] );
         console.log(JSON.parse(archive[keys[i]]));
         new Task(JSON.parse(archive[keys[i]]).title,JSON.parse(archive[keys[i]]).place,JSON.parse(archive[keys[i]]).time,JSON.parse(archive[keys[i]]).description,JSON.parse(archive[keys[i]]).color)
@@ -85,6 +95,9 @@ const addEventListener = () =>{
         const isActive = true;
         const newTask = {title,place,description,isActive,time,color}
         localStorage.setItem(title, JSON.stringify(newTask));
+        if(document.querySelector('.pasDeTask')){
+            document.querySelector('.pasDeTask').remove()
+        }
         const task = new Task(taskName,taskPlace,taskTime,taskDescription,taskColor)
         console.log(task);
         
