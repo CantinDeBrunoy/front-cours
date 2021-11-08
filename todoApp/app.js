@@ -94,6 +94,11 @@ const addEventListener = () =>{
         const color = taskColor;
         const isActive = true;
         const newTask = {title,place,description,isActive,time,color}
+        inputTaskName.value =""
+        inputTaskTime.value =""
+        inputTaskPlace.value =""
+        inputTaskDescription.value =""
+
         localStorage.setItem(title, JSON.stringify(newTask));
         if(document.querySelector('.pasDeTask')){
             document.querySelector('.pasDeTask').remove()
