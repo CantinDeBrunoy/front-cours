@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+}
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title{
+    font-size: 2em;
+}
+
+.TasksList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.task{
+    --borderColor:"";
+    border-radius: 5px;
+    margin-top: 1%;
+    padding: 1em;
+    background-color: white;
+    border: var(--borderColor);
+    width: 70%;
+    display: flex;
+}
+
+.leftSide{
+    height: 100%;
+}
+.rightSide{
+    margin-left: 0.5vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.colors{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.colors>*{
+    box-sizing: border-box; 
+    --borderColor:"";
+    margin: 0.5em;
+    border-radius: 25%;
+    margin-top: 2%;
+    height: 5vh;
+    width: 5vh;
+    border: var(--borderColor);
+    --backgroundColor:"";
+    background-color: var(--backgroundColor);
+}
+
+input{
+    border:none;
+    background-color: bisque;
+    margin: 1em;
+    width: 75%;
+    height: 4vh;
+    font-size: 2vh;
+}
+
+.newTaskName{
+    font-size: 1.3em;
+}
+
+.newTaskDivTimePlace{
+    color: grey;
+    font-size: 0.8em;
+}
+
+

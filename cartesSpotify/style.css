@@ -1,0 +1,40 @@
+.player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.track{
+    --display:block;
+    --background-image:null;
+
+    flex-direction: column;
+    margin-left: 1%;
+    background-image:var(--background-image);
+    background-size: cover;
+    background-repeat:no-repeat ;
+    display: var(--display);
+    width: 18vw;
+    height: 30vw;
+}
+
+.divTracksAndArrows{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.track:hover{
+    opacity: 0.5;
+}
+
+.titrePlayer{
+    font-size: 2em;
+}
+
+.divAllTracks{
+    --display:flex;
+
+    transition: all 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: var(--display);
+
+}

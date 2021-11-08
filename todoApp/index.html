@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoApp</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="formulaire">
+        <span class="title">Todo App</span>
+        <input type="text" class="input-tasksName" placeholder="Titre">
+        <input type="text" class="input-tasksPlace" placeholder="Lieu">
+        <input type="time" class="input-tasksTime" placeholder="Heure">
+        <input type="text" class="input-tasksDescription" placeholder="Description">
+        <div class="colors">
+            <div class="color grey" value="grey"></div>
+            <div class="color yellow" value="yellow"></div>
+            <div class="color red" value="red"></div>
+        </div>
+        <button class="bouton-tasks">GO</button>
+    </div>
+    <div class="TasksList"></div>
+</body>
+<script src="Task.js"></script>
+<script src="app.js"></script>
+</html>
