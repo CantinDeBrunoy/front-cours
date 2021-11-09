@@ -109,6 +109,12 @@ class Task {
         newBoutonDelete2.addEventListener('click',()=>{
             newTask.remove()
             localStorage.removeItem(this.title);
+            if(!document.querySelector('.task')){
+                let pasDeTask = document.createElement('div')
+                pasDeTask.classList.add('pasDeTask')
+                pasDeTask.textContent = "Pas de Todo :)"
+                document.body.appendChild(pasDeTask)
+            }
         })
 
         console.log(task);
